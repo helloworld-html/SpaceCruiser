@@ -13,7 +13,8 @@ let inputPanel = document.querySelector("#form")
 let spaceship = document.querySelector("#icon")
 let fireball
 let sensibilty
-let score = 1; let intervalScore
+let score = 1
+let intervalScore
 let userName = document.querySelector("#name")
 let parametersPanel = document.querySelector("#parameters")
 let parametersIcon = document.querySelector("#general")
