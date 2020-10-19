@@ -1,0 +1,230 @@
+body {
+background-color: black;
+font-family: 'B612', sans-serif;
+user-select: none;
+margin: 0px;
+height: 100vh;
+padding: 0px;
+background-image: url(Photo/bg.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+animation: intro-fade 3s;
+background-size: cover;
+overflow: hidden; }
+
+#info {
+font-weight: normal;
+font-style: italic;
+display: none;
+text-decoration: none;
+color: white;
+position: fixed;
+bottom: 0;
+text-align: center;
+width: 100%;
+font-size: 150% }
+
+#info > a {
+user-select: text;
+color: #4dc3ff;
+text-decoration: none }
+
+form {
+display: block;
+z-index: 1;
+margin-left: auto;
+margin-right: auto;
+margin-top: 50vh;
+transform: translateY(-60%);
+width: 400px;
+text-align: center;
+background-color: #737373;
+opacity: 0.8;
+border-radius: 15px;
+padding: 40px 50px 40px 50px; }
+
+form:hover {opacity: 0.9}
+
+form > label {
+font-size: 180%;
+text-align: center;
+font-weight: lighter;
+text-align: center; }
+
+form > input {
+display: block;
+font-size: 120%;
+margin: 30px auto 20px auto;
+border: none;
+border-radius: 10px;
+padding: 10px 20px 10px 20px; }
+
+form > button {
+background-color: #e6e6e6;
+cursor: pointer;
+padding: 10px 20px 10px 20px;
+border: none;
+border-radius: 10px; }
+
+form > button:hover {transform: translate(0px, 1px)}
+
+#count {
+display: none;
+z-index: 3;
+margin-top: 30vh;
+font-weight: lighter;
+text-align: center;
+color: black;
+font-size: 1500%; }
+
+#name {
+z-index: 1;
+font-weight: normal;
+font-family: sans-serif;
+margin-top: 5px;
+color: white;
+text-align: center;
+font-size: 240%;
+cursor: pointer; }
+
+#score {
+z-index: 1;
+position: absolute;
+display: block;
+font-weight: normal;
+font-size: 190%;
+animation: score 2s infinite;
+top: -17px;
+left: 15px;
+color: white; }
+
+#icon {
+z-index: 2;
+display: none;
+cursor: none;
+width: 9%; }
+
+/*refers to fireball*/
+img {position: absolute; z-index: 2; width: 3%}
+
+#general {
+display: none;
+z-index: 1;
+cursor: pointer;
+top: 10px;
+width: 60px;
+right: 10px; }
+
+#general:hover {transform: rotate(-100deg)}
+
+section {
+z-index: 3;
+cursor: move;
+text-align: center;
+display: none;
+opacity: 0.7;
+height: auto;
+border: none;
+background-color: #d9d9d9;
+color: black;
+position: fixed;
+padding: 0px 30px 20px 30px;
+left: 50%;
+width: auto;
+top: 50%;
+transform: translate(-50%, -50%);
+border-radius: 13px; }
+
+h3 {
+color: black;
+font-weight: normal;
+font-size: 170%; }
+
+#sensibilty {
+display: block;
+margin-right: auto;
+margin-left: auto; }
+
+#validateSens {
+margin-top: 20px;
+background-color: #cccccc;
+border: none;
+padding: 10px;
+border-radius: 6px;
+font-size: 90%;
+cursor: pointer; }
+
+#validateSens:hover {transform: translate(0px, 1px)}
+
+#stopGame {
+z-index: 3;
+display: none;
+margin-top: 30vh;
+text-align: center;
+font-size: 500%;
+font-weight: normal;
+color: black; }
+
+#finalScore {
+z-index: 3;
+display: none;
+margin-top: 0px;
+padding-top: 0px;
+text-align: center;
+font-size: 200%;
+font-weight: normal;
+color: black; }
+
+/*Responsiveness*/
+@media screen and (max-width: 1000px) {
+form {padding: 25px 0px 25px 0px}
+form > label {font-size: 120%}
+form > input {
+font-size: 80%;
+margin: 30px auto 20px auto;
+padding: 7px 13px 7px 13px; }
+form > button {
+padding: 8px 13px 8px 13px;
+font-size: 60%;
+border-radius: 5px; }
+#name {font-size: 170%}
+#count {font-size: 150px}
+#score {font-size: 130%}
+#icon {width: 11%}
+img {width: 30px}
+#general {width: 50px}
+section {padding: 0px 40px 20px 40px}
+h3 {font-size: 130%}
+#validateSens {padding: 6px; font-size: 60%}
+#stopGame {font-size: 290%}
+#finalScore {font-size: 120%}}
+
+@keyframes intro-fade {
+from {opacity: 0}
+to {opacity: 1}}
+
+@keyframes count-down {
+from {transform: scale(0)}
+to {transform: scale(1)}}
+
+@keyframes blinkSpaceship {
+0% {opacity: 1}
+10% {opacity: 0}
+20% {opacity: 1}
+30% {opacity: 0}
+40% {opacity: 1}
+50% {opacity: 0}
+60% {opacity: 1}
+70% {opacity: 0}
+80% {opacity: 1}
+90% {opacity: 0}
+100% {opacity: 1}}
+
+@keyframes animationStopGame {
+from {opacity: 1; transform: scale(1)}
+to {opacity: 0; transform: scale(2)}}
+
+@keyframes score {
+0% {transform: scale(1); color: #00e600}
+50% {transform: scale(1.2); color: #e67300}
+100% {transform: scale(1); color: #00ace6}}

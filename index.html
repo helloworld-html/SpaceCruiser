@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <title> SpaceCruiser | Video Game </title>
+  <meta charset="utf-8"/>
+  <meta name="author" content="Thomas Giudici, helloworld.pdf@gmail.com"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="gameStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
+ </head>
+
+ <body oncontextmenu="return false" ondragstart="return false">
+  <!--Background Music-->
+  <audio controls style="display:none">
+   <source src="Photo/Music1.mp3" type="audio/mp3">
+  </audio>
+
+  <h2 id="info"> <b> Author: </b> Thomas Giudici, <a> helloworld.pdf@gmail.com </a> </h2>
+
+  <!--Input-->
+  <form id="form" title="Write your name" autocomplete="on">
+   <label> Choose your username: </label>
+   <input id="input" type="text" maxlength="10" autofocus>
+   <button type="button" onclick="validateForm()" id="begin-game"> Submit </button>
+  </form>
+
+  <!--Sensibilty-->
+  <img src="Photo/general.png" id="general" title="Sensibility parameters">
+  <section id="parameters" onmouseover="dragElement()">
+   <h3> Choose your sensibility </h3>
+   <input onmousedown="isolateRangeSlider(event)" type="range" id="sensibilty" min="1" value="2" max="3">
+   <button id="validateSens" onclick="validateSens()"> Submit </button>
+  </section>
+
+  <!--Gameplay-->
+  <h2 id="count"></h2>
+  <h2 id="name" title="click to get player's informations"></h2>
+  <h2 id="score" title="Score"></h2>
+  <img src="Photo/Spaceship1.png" id="icon">
+
+  <!--Game over-->
+  <h2 id="stopGame" title="Try again!"> Game Over! </h2>
+  <h2 id="finalScore"></h2>
+
+ <script src="gameScript.js"></script>
+
+</body>
+</html>
