@@ -120,6 +120,7 @@ border-radius: 13px; }
 
 section > label {
 color: black;
+cursor: move;
 font-weight: normal;
 font-size: 170%; }
 
