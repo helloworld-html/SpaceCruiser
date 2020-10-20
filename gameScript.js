@@ -22,6 +22,12 @@ let validateInput = document.querySelector("#begin-game")
 let fireballArray = []
 let fireballElement
 
+//Pre-check
+function onlyOnPc() {
+ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent)) {
+  alert("Game only works with keyboard")
+  body.style.display = "none"}}
+
 
  //event.keyCode
  document.addEventListener('keydown', function(e) {
