@@ -13,7 +13,7 @@ https://helloworld-html.github.io/SpaceCruiser
  
  - click *i* to **send e-mail**
  
-This game is currently in development so feel free to collaborate in this project!
+This game is currently in development so feel free to collaborate in this project !
  
 **Important Notice:** This game only works on pc (keyboard needed).
  
