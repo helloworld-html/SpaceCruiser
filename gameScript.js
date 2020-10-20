@@ -32,10 +32,7 @@ function onlyOnPc() {
  //event.keyCode
  document.addEventListener('keydown', function(e) {
   if (e.keyCode !== null) { backgroundMusic.play() }
-  if (e.keyCode == 73) {
-  let info = document.getElementById("info")
-  if (info.style.display === "none") { info.style.display = "inline" }
-  else { info.style.display = "none" }}})
+  if (e.keyCode == 73) {window.open('https://github.com/helloworld-html/SpaceCruiser', '_blank');}})
 
 
 //Sensibilty Panel

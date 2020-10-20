@@ -12,23 +12,6 @@ animation: intro-fade 3s;
 background-size: cover;
 overflow: hidden; }
 
-#info {
-font-weight: normal;
-font-style: italic;
-display: none;
-text-decoration: none;
-color: white;
-position: fixed;
-bottom: 0;
-text-align: center;
-width: 100%;
-font-size: 150% }
-
-#info > a {
-user-select: text;
-color: #4dc3ff;
-text-decoration: none }
-
 form {
 display: block;
 z-index: 1;
