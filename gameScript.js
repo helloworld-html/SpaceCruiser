@@ -22,6 +22,7 @@ let validateInput = document.querySelector("#begin-game")
 let fireballArray = []
 let fireballElement
 
+
  //event.keyCode
  document.addEventListener('keydown', function(e) {
   if (e.keyCode !== null) { backgroundMusic.play() }
