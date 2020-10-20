@@ -25,8 +25,9 @@ let fireballElement
 //Pre-check
 function onlyOnPc() {
  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent)) {
-  alert("Game only works with keyboard")
-  body.style.display = "none"}}
+  alert("Sorry, Game only works on computer")
+  body.style.display = "none"
+  window.addEventListener('touchstart', function() { window.history.back()} )}}
 
 
  //event.keyCode
@@ -98,7 +99,6 @@ function validateForm() {
 
 
 function StartGame() {
- //Count down
  let count = 3
  var stopCountDown = setInterval(CountDown, 1000)
  countDownDisplay.style.display = "block"
