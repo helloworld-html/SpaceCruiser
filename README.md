@@ -11,7 +11,7 @@ https://helloworld-html.github.io/SpaceCruiser
  
  - click *3* to get **high sensibilty** (spaceship will move fast but will be unprecise)
  
- - click *i* to **send e-mail**
+ - click *i* to **reach github repository**
  
 This game is currently in development so feel free to collaborate in this project !
  
