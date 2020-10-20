@@ -1,4 +1,4 @@
-# SpaceCruiser (bêta version)
+# SpaceCruiser
 https://helloworld-html.github.io/SpaceCruiser
 
 **Game commands:**
