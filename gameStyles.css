@@ -15,6 +15,7 @@ overflow: hidden; }
 * {user-select: none}
 
 .alert {
+animation: alert-animation 10s infinite;
 padding: 20px;
 text-align: center;
 margin: 0px;
@@ -32,6 +33,8 @@ cursor: pointer;
 transition: 0.5s; }
 
 .closeAlert:hover {color: black}
+
+.alert > a {text-decoration:none; color:#00bfff}
 
 form {
 display: block;
@@ -207,6 +210,11 @@ section {padding: 0px 40px 20px 40px}
 @keyframes intro-fade {
 from {opacity: 0}
 to {opacity: 1}}
+
+@keyframes alert-animation {
+0% {background-color: orange}
+50% {background-color: coral}
+100% {background-color: #ff4d4d}}
 
 @keyframes count-down {
 from {transform: scale(0)}
