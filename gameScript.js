@@ -191,10 +191,10 @@ const loop = function() {
 function detectOverlap(fireball) {
  const shipRect = spaceship.getBoundingClientRect()
  const fireballRect = fireball.getBoundingClientRect()
- if (( shipRect.x + shipRect.width - 30 > fireballRect.x
-  && shipRect.x + 30 < fireballRect.x + fireball.width) &&
-  (shipRect.y + shipRect.height - 30 > fireballRect.y
-  && shipRect.y + 30 < fireballRect.y + fireball.height )) return true}
+ if (( shipRect.x + shipRect.width > fireballRect.x
+  && shipRect.x < fireballRect.x + fireball.width) &&
+  (shipRect.y + shipRect.height > fireballRect.y
+  && shipRect.y < fireballRect.y + fireball.height )) return true}
 
 //Collision Detection
 function checkCollision() {

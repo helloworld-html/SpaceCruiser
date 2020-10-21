@@ -85,7 +85,7 @@ color: white; }
 z-index: 2;
 display: none;
 cursor: none;
-width: 9%; }
+width: 4%; }
 
 /*refers to fireball*/
 img {position: absolute; z-index: 2; width: 3%}
