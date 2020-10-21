@@ -5,6 +5,7 @@ user-select: none;
 margin: 0px;
 height: 100vh;
 padding: 0px;
+width: 100%;
 background-image: url(Photo/bg.jpg);
 background-repeat: no-repeat;
 background-attachment: fixed;
