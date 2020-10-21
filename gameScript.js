@@ -130,9 +130,11 @@ function StartGame() {
    "Photo/Spaceship2.png",
    "Photo/Spaceship3.png",
    "Photo/Spaceship4.png",
-   "Photo/Spaceship5.png"]
+   "Photo/Spaceship5.png",
+   "Photo/Spaceship6.png",
+   "Photo/Spaceship7.png"]
   document.body.onkeydown = function(e) {
-  if (e.keyCode === 32) { hits++; spaceship.src = toogleImages[hits % 5] }}
+  if (e.keyCode === 32) { hits++; spaceship.src = toogleImages[hits % 7] }}
 
   //Fireball script
   function generateFireBallWithAttributes(el, attrs) {
