@@ -1,7 +1,6 @@
 body {
 background-color: black;
 font-family: 'B612', sans-serif;
-user-select: none;
 margin: 0px;
 height: 100vh;
 padding: 0px;
@@ -12,6 +11,8 @@ background-attachment: fixed;
 animation: intro-fade 3s;
 background-size: cover;
 overflow: hidden; }
+
+* {user-select: none}
 
 form {
 display: block;

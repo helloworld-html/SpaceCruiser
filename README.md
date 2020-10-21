@@ -13,6 +13,8 @@ https://helloworld-html.github.io/SpaceCruiser
  
  - press *esc* to **reach github repository**
  
+ - press keyboards *arrows* **to move**
+ 
 This game is currently in development so feel free to collaborate in this project !
  
 **Important Notice:** This game only works on pc (keyboard needed).
