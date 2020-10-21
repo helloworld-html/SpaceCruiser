@@ -94,7 +94,7 @@ img {position: absolute; z-index: 2; width: 3%}
 #general {
 display: none;
 z-index: 1;
-cursor: pointer;
+cursor: cell;
 top: 10px;
 width: 60px;
 right: 10px; }
