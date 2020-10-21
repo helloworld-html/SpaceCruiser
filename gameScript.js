@@ -27,7 +27,8 @@ function onlyOnPc() {
  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Opera Mini/i.test(navigator.userAgent)) {
   alert("Sorry, Game only works on computer")
   body.style.display = "none"
-  window.addEventListener('touchstart', function() { window.history.back()} )}}
+  window.addEventListener('touchstart', function() {
+   window.open('https://github.com/helloworld-html/SpaceCruiser', '_blank')})}}
 
 
  //event.keyCode
