@@ -99,6 +99,7 @@ function validateForm() {
 
 
 function StartGame() {
+ document.querySelector(".alert").style.display = "none"
  let count = 3
  var stopCountDown = setInterval(CountDown, 1000)
  countDownDisplay.style.display = "block"

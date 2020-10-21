@@ -14,6 +14,25 @@ overflow: hidden; }
 
 * {user-select: none}
 
+.alert {
+padding: 20px;
+text-align: center;
+margin: 0px;
+background-color: orange;
+color: white; }
+
+.closeAlert {
+margin-left: 15px;
+color: white;
+font-weight: bold;
+float: right;
+font-size: 22px;
+line-height: 20px;
+cursor: pointer;
+transition: 0.5s; }
+
+.closeAlert:hover {color: black}
+
 form {
 display: block;
 z-index: 1;
