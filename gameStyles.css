@@ -212,8 +212,7 @@ to {opacity: 1}}
 
 @keyframes alert-animation {
 0% {background-color: orange}
-30% {background-color: coral}
-60% {background-color: #e6e600}
+50% {background-color: coral}
 100% {background-color: #ff4d4d}}
 
 @keyframes count-down {
