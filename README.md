@@ -11,7 +11,7 @@ https://helloworld-html.github.io/SpaceCruiser
  
  - press *3* to get **high sensibilty** (spaceship will move fast but will be unprecise)
  
- - press *esc* to **reach github repository**
+ - press *esc* to **hyperlink in github repository**
  
  - press keyboards *arrows* **to move**
  
