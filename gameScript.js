@@ -85,17 +85,17 @@ input.addEventListener("keydown", function(event) {
 function validateForm() {
  input.value = input.value.toLowerCase()
  try {
-  if (input.value == "") { throw "Complete blanks" }
-  if (!input.value.match(/^[A-Za-z]+$/)) { throw "Only letters allowed" }
-  if (input.value.length < 3) { throw "Must have at least 3 characters" }}
+  if (input.value == "") throw "Complete blanks"
+  if (!input.value.match(/^[A-Za-z]+$/)) throw "Only letters allowed"
+  if (input.value.length < 3) throw "Must have at least 3 characters" }
  catch (inputError) { alert(inputError); return false }
  inputPanel.style.display = "none"; StartGame()
 
  //Full screen
  document.addEventListener('fullscreenchange', function() {
-   if (document.fullscreenElement) { console.log("Currently playing") }
-   else { location.reload() }})
+  if (!document.fullscreenElement) { location.reload() }})
  document.addEventListener('keyup', function(e) {
+  if (input.value == "admin") { this.removeEventListener('keyup', arguments.callee, false) }
   if (e.keyCode !== null) { document.documentElement.requestFullscreen() }})}
 
 
