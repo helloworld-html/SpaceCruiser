@@ -67,6 +67,7 @@ padding: 10px 20px 10px 20px; }
 form > button {
 background-color: #e6e6e6;
 cursor: pointer;
+margin-top: 5px;
 padding: 10px 20px 10px 20px;
 border: none;
 border-radius: 10px; }
