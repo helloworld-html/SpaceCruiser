@@ -198,7 +198,7 @@ function detectOverlap(fireball) {
  if (( shipRect.x + shipRect.width > fireballRect.x
   && shipRect.x < fireballRect.x + fireball.width) &&
   (shipRect.y + shipRect.height > fireballRect.y
-  && shipRect.y < fireballRect.y + fireball.height )) return true}
+  && shipRect.y < fireballRect.y + fireball.height )) return true }
 
 //Collision Detection
 function checkCollision() {
@@ -207,6 +207,7 @@ function checkCollision() {
   if (detectOverlap(fireballCollision)) { return collision = true }})
 
  if (collision === true) {
+  if (input.value == "admin") return false
   fireballArray.forEach(function(fireballElement) {
    return fireballElement.style.display = "none" })
   backgroundMusic.muted = "true"
