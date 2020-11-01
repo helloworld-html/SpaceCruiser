@@ -50,11 +50,7 @@ padding: 40px 50px 40px 50px; }
 
 form:hover {opacity: 0.9}
 
-form > label {
-font-size: 180%;
-text-align: center;
-font-weight: lighter;
-text-align: center; }
+form > label {font-size: 180%; text-align: center}
 
 form > input {
 display: block;
@@ -63,6 +59,8 @@ margin: 30px auto 20px auto;
 border: none;
 border-radius: 10px;
 padding: 10px 20px 10px 20px; }
+
+form > input::placeholder {font-family: sans-serif}
 
 form > button {
 background-color: #e6e6e6;
