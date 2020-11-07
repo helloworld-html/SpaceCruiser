@@ -181,29 +181,6 @@ font-size: 200%;
 font-weight: normal;
 color: black; }
 
-/*Responsiveness*/
-@media screen and (max-width: 1000px) {
-form {padding: 25px 0px 25px 0px}
-form > label {font-size: 120%}
-form > input {
-font-size: 80%;
-margin: 30px auto 20px auto;
-padding: 7px 13px 7px 13px; }
-form > button {
-padding: 8px 13px 8px 13px;
-font-size: 60%;
-border-radius: 5px; }
-#name {font-size: 170%}
-#count {font-size: 150px}
-#score {font-size: 130%}
-#icon {width: 11%}
-img {width: 30px}
-#general {width: 50px}
-section {padding: 0px 40px 20px 40px}
-#validateSens {padding: 6px; font-size: 60%}
-#stopGame {font-size: 290%}
-#finalScore {font-size: 120%}}
-
 @keyframes intro-fade {
 from {opacity: 0}
 to {opacity: 1}}
