@@ -17,4 +17,4 @@ https://helloworld-html.github.io/SpaceCruiser
 
 **Important Notice:** This game only works on pc (keyboard needed).
 
-*Ps: there is a cheat feature in the game... see if you can find it (tip: open web inspector)*
+*Ps: there is a cheat feature in the game... see if you can find it*
