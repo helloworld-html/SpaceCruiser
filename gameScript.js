@@ -112,6 +112,7 @@ function StartGame() {
 
  //Set Timeout before game starts
  setTimeout(function() {
+  sensibilty = setInterval(loop, 8)
   parametersIcon.style.display = "block"
   userName.style.display = "block"
   userName.innerHTML = "Player: " + "<a style=color:#4dc3ff;text-decoration:none> @" + input.value + "</a>"
@@ -187,8 +188,7 @@ const loop = function() {
   pos.top = body.offsetHeight - spaceship.offsetHeight }
  spaceship.setAttribute("data", body.offsetWidth + ":" + body.offsetHeight)
  spaceship.style.left = pos.left + "px"; spaceship.style.top = pos.top + "px"
- checkCollision()}
- sensibilty = setInterval(loop, 8)
+ checkCollision() }
 
 
 //Stop game on collision
