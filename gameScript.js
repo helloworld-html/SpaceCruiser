@@ -84,6 +84,7 @@ input.addEventListener("keydown", function(event) {
  if (event.keyCode === 13) { event.preventDefault(); validateInput.click() }})
 function validateForm() {
  input.value = input.value.toLowerCase()
+ if (input.value == "admin") {backgroundMusic.muted = "true"}
  try {
   if (input.value == "") throw "Complete blanks"
   if (!input.value.match(/^[A-Za-z]+$/)) throw "Only letters allowed"
