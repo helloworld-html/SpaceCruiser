@@ -87,7 +87,7 @@ form > input { font-size: 150%; padding: 12px 24px 12px 24px; margin: 36px auto 
 form > button { padding: 12px 24px 12px 24px; margin-top: 10px; font-size: 16px }}
 
 @media screen and (min-width: 2500px) {
-.alert { padding: 50px; font-size: 35px }
+.alert { padding: 40px; font-size: 30px }
 .closeAlert { font-size: 50px; line-height: 30px }
 form { width: 750px; padding: 80px 100px 80px 100px; border-radius: 30px }
 form > label { font-size: 360% }
