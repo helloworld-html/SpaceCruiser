@@ -33,8 +33,7 @@ function onlyOnPc() {
 
  //event.keyCode
  document.addEventListener('keydown', function(e) {
-  if (e.keyCode !== null) { backgroundMusic.play() }
-  if (e.keyCode == 27) { window.open('https://github.com/helloworld-html/SpaceCruiser', '_blank') }})
+  if (e.keyCode !== null) { backgroundMusic.play() }})
 
 
 //Sensibilty Panel
