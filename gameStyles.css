@@ -73,6 +73,8 @@ border-radius: 10px; }
 form > button:hover { transform: translate(0px, 1px) }
 
 @media screen and (max-width: 1000px) {
+.alert { padding: 15px; font-size: 15px }
+.closeAlert { font-size: 18px }
 form { width: 300px; padding: 30px 40px 30px 40px }
 form > label { font-size: 160% }
 form > input { font-size: 100%; padding: 8px 16px 8px 16px }
