@@ -1,6 +1,5 @@
 body {
 background-color: black;
-font-family: 'B612', sans-serif;
 margin: 0px;
 height: 100vh;
 padding: 0px;
@@ -12,7 +11,7 @@ animation: intro-fade 3s;
 background-size: cover;
 overflow: hidden; }
 
-* {user-select: none}
+* { user-select: none; font-family: 'B612', sans-serif }
 
 .alert {
 animation: alert-animation 13s infinite;
