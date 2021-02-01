@@ -1,53 +1,42 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-  <title> SpaceCruiser | Video Game </title>
-  <meta charset="utf-8"/>
-  <meta name="description" content="Play at SpaceCruiser, avoid the fireballs and challenge yourself! Project hosted on Github, click for more informations">
-  <meta name="author" content="Thomas Giudici, helloworld.pdf@gmail.com"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="gameStyles.css">
-  <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
- </head>
+<html lang="en">
+  <head>
+    <title> SpaceCruiser | Video Game </title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Play at SpaceCruiser, avoid the fireballs and challenge yourself! Project hosted on Github, click for more informations">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="gameStyles.css">
+  </head>
 
- <body onload="onlyOnPc()" oncontextmenu="return false" ondragstart="return false">
-  <!--Background music-->
-  <audio controls style="display:none">
-   <source src="Photo/Music1.mp3" type="audio/mp3">
-  </audio>
+  <body>
+    <div class="alert">
+      <span class="closeAlert" onclick="this.parentElement.style.display='none'"> &times </span>
+      <b> Info: </b> Open Github repository to get more information and details about this game by clicking
+      <a style="color:white" rel="noopener" href="https://github.com/helloworld-html/SpaceCruiser" target="_blank"> here </a>
+    </div>
 
-  <div class="alert">
-   <span class="closeAlert" onclick="this.parentElement.style.display='none'"> &times </span>
-   <b> Info: </b> Open Github repository to get more information and details about this game by clicking
-   <a style="color:white" rel="noopener" href="https://github.com/helloworld-html/SpaceCruiser" target="_blank"> here </a>
-  </div>
+    <form id="form" autocomplete="on">
+      <label> Choose your username: </label>
+      <input id="input" type="text" maxlength="10" placeholder="eg: helloworld">
+      <button type="button" onclick="validateForm()" id="begin-game"> Submit </button>
+    </form>
 
-  <!--Input-->
-  <form id="form" title="Write your name" autocomplete="on">
-   <label> Choose your username: </label>
-   <input id="input" type="text" maxlength="10" placeholder="eg: helloworld">
-   <button type="button" onclick="validateForm()" id="begin-game"> Submit </button>
-  </form>
+    <img src="Photo/general.png" onclick="parametersPanel.style.display='block'" id="general">
 
-  <!--Sensibilty-->
-  <img src="Photo/general.png" id="general" title="Sensibility parameters">
-  <section id="parameters" onmouseover="dragElement()">
-   <label> Choose your sensibility </label>
-   <input onmousedown="isolateRangeSlider(event)" type="range" id="sensibilty" min="1" value="2" max="3">
-   <button id="validateSens" onclick="validateSens()"> Submit </button>
-  </section>
+    <section id="parameters">
+      <label> Choose your sensibility </label>
+      <input type="range" id="sensibilty" min="1" value="2" max="3">
+      <button id="validateSens" onclick="validateSens()"> Submit </button>
+    </section>
 
-  <!--Gameplay-->
-  <h2 id="count"></h2>
-  <h2 id="name"></h2>
-  <h2 id="score" title="Score"></h2>
-  <img src="Photo/Spaceship1.png" id="icon">
+    <h2 id="count"></h2>
+    <h2 id="name"></h2>
+    <h2 id="score"></h2>
+    <img src="Photo/Spaceship1.png" id="icon">
+    <h2 id="stopGame"> Game Over! </h2>
+    <h2 id="finalScore"></h2>
 
-  <!--Game over-->
-  <h2 id="stopGame" title="Try again!"> Game Over! </h2>
-  <h2 id="finalScore"></h2>
+    <script src="gameScript.js"></script>
 
- <script src="gameScript.js"></script>
-
-</body>
+  </body>
 </html>
