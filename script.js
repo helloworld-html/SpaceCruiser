@@ -1,38 +1,30 @@
 "use strict"
 
 let body = document.querySelector("body");
-let finalScore = document.querySelector("#finalScore");
-let backgroundMusic = document.querySelector("audio");
-let input = document.querySelector("#input");
-let countDownDisplay = document.querySelector("#count");
-let displayScore = document.querySelector("#score");
-let rangeField = document.querySelector("#sensibilty");
-let submitSensibilty = document.querySelector("#validateSens");
-let inputPanel = document.querySelector("#form");
+let input = document.querySelector("input");
 let spaceship = document.querySelector("#icon");
 let fireball;
 let sensibilty;
 let score = 1;
 let intervalScore;
-let userName = document.querySelector("#name");
-let parametersPanel = document.querySelector("#parameters");
-let parametersIcon = document.querySelector("#general");
-let validateInput = document.querySelector("#begin-game");
 let fireballArray = new Array;
 let fireballElement;
 
 input.addEventListener("keydown", function(event) {
-  if (event.keyCode === 13) { event.preventDefault(); validateInput.click() }
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.querySelector("#begin-game").click()
+  }
 })
 
 function validateSens() {
-  inputPanel.style.filter = "none";
-  parametersPanel.style.display = "none";
+  document.querySelector("#form").style.filter = "none";
+  document.querySelector("#parameters").style.display = "none";
   clearInterval(sensibilty);
-  let changeSensibilty = parseFloat(rangeField.value);
+  let changeSensibilty = parseFloat(document.getElementById("sensibilty").value);
   switch (changeSensibilty) {
     case 1:
-      sensibilty = setInterval(loop, 13);
+      sensibilty = setInterval(loop, 15);
       break
     case 2:
       sensibilty = setInterval(loop, 8);
@@ -41,6 +33,21 @@ function validateSens() {
       sensibilty = setInterval(loop, 5);
   }
 }
+
+document.addEventListener('keydown', function(e) {
+  if (e.keyCode == 49) {
+    document.getElementById("sensibilty").value = 1;
+    document.querySelector("#validateSens").click()
+  }
+  if (e.keyCode == 50) {
+    document.getElementById("sensibilty").value = 2;
+    document.querySelector("#validateSens").click()
+  }
+  if (e.keyCode == 51) {
+    document.getElementById("sensibilty").value = 3;
+    document.querySelector("#validateSens").click()
+  }
+})
 
 function validateForm() {
   input.value = input.value.toLowerCase();
@@ -52,7 +59,7 @@ function validateForm() {
     alert(inputError);
     return false
   }
-  inputPanel.style.display = "none";
+  document.querySelector("#form").style.display = "none";
   StartGame()
 
   document.addEventListener('keyup', function(e) {
@@ -67,37 +74,32 @@ function StartGame() {
   document.querySelector(".alert").style.display = "none";
   let count = 3;
   var stopCountDown = setInterval(CountDown, 1000);
-  countDownDisplay.style.display = "block";
-  countDownDisplay.style.animation = "count-down 10s";
+  document.querySelector("#count").style.display = "block";
+  document.querySelector("#count").style.animation = "count-down 10s";
 
   function CountDown() {
-    countDownDisplay.innerHTML = count;
+    document.querySelector("#count").innerHTML = count;
     if (count > 0) { count-- }
     else {
       clearInterval(stopCountDown);
-      countDownDisplay.style.display = "none"
+      document.querySelector("#count").style.display = "none"
     }
   }
 
   setTimeout(function() {
     sensibilty = setInterval(loop, 8);
-    parametersIcon.style.display = "block";
-    userName.style.display = "block";
-    userName.innerHTML = "Player: " + "<a style='color:#4dc3ff'> @" + input.value + "</a>";
+    document.querySelector("#general").style.display = "block";
+    document.querySelector("#name").style.display = "block";
+    document.querySelector("#name").innerHTML = "Player: " + "<a style='color:#4dc3ff'> @" + input.value + "</a>";
 
-    function GameScore() {
-      displayScore.innerHTML = "Score: " + score;
+    let gameScore = function() {
+      document.querySelector("#score").innerHTML = "Score: " + score;
       score++
     }
-    intervalScore = setInterval(GameScore, 100);
+
+    intervalScore = setInterval(gameScore, 100);
     spaceship.style.display = 'block';
     spaceship.style.animation = "blinkSpaceship 1s";
-
-    document.addEventListener('keydown', function(e) {
-      if (e.keyCode == 49) { rangeField.value = 1; submitSensibilty.click() }
-      if (e.keyCode == 50) { rangeField.value = 2; submitSensibilty.click() }
-      if (e.keyCode == 51) { rangeField.value = 3; submitSensibilty.click() }
-    })
 
     const toogleImages = [
       "Photo/Spaceship1.png",
@@ -115,7 +117,6 @@ function StartGame() {
       }
     }
 
-    //Fireball script
     function generateFireBallWithAttributes(el, attrs) {
       for (var key in attrs) {
         el.setAttribute(key, attrs[key])
@@ -124,8 +125,8 @@ function StartGame() {
     }
 
     (function createFireBalls() {
-      for (let i = 0; i <= 13; i++) {
-        fireball = document.createElement("img")
+      for (let i = 0; i < 14; i++) {
+        fireball = document.createElement("img");
         fireballArray.push(generateFireBallWithAttributes(fireball, {
           src: "Photo/fireball.png"
         }))
@@ -151,8 +152,8 @@ function StartGame() {
       let fireInterval = setInterval(fireLoop, 1000 / (Math.random() * 50 + 80))
     })
 
-    function fireballRandom(offset) {
-      return Math.floor(Math.random() * (window.innerWidth - offset))
+    function fireballRandom(x) {
+      return Math.floor(Math.random() * (window.innerWidth - x))
     }
   }, 4000)
 }
@@ -214,17 +215,13 @@ function checkCollision() {
     fireballArray.forEach(function(fireballElement) {
       return fireballElement.style.display = "none"
     })
-    spaceship.style.display = "none";
     stopGame.style.display = "block";
     stopGame.style.animation = "animationStopGame 6.5s forwards";
     clearInterval(intervalScore);
-    finalScore.style.display = "block";
-    finalScore.innerHTML = "Your score was: " + score;
-    finalScore.style.animation = "animationStopGame 6.5s forwards";
-    parametersPanel.style.display = "none";
-    parametersIcon.style.display = "none";
-    userName.style.display = "none";
-    displayScore.style.display = "none";
+    document.querySelector("#finalScore").style.display = "block";
+    document.querySelector("#finalScore").innerHTML = "Your score was: " + score;
+    document.querySelector("#finalScore").style.animation = "animationStopGame 6.5s forwards";
+    document.querySelector("main").style.display = "none";
     setTimeout(function() { location.reload() }, 5500)
   }
 }

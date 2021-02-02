@@ -15,13 +15,14 @@
       <a style="color:white" rel="noopener" href="https://github.com/helloworld-html/SpaceCruiser" target="_blank"> here </a>
     </div>
 
+    <main>
     <form id="form" autocomplete="on">
       <label> Choose your username: </label>
-      <input id="input" type="text" maxlength="10" placeholder="eg: helloworld">
+      <input type="text" maxlength="10" placeholder="eg: helloworld">
       <button type="button" onclick="validateForm()" id="begin-game"> Submit </button>
     </form>
 
-    <img src="Photo/general.png" onclick="parametersPanel.style.display='block'" id="general">
+    <img src="Photo/general.png" onclick="document.getElementById('parameters').style.display='block'" id="general">
 
     <section id="parameters">
       <label> Choose your sensibility </label>
@@ -33,6 +34,8 @@
     <h2 id="name"></h2>
     <h2 id="score"></h2>
     <img src="Photo/Spaceship1.png" id="icon">
+    </main>
+
     <h2 id="stopGame"> Game Over! </h2>
     <h2 id="finalScore"></h2>
 
