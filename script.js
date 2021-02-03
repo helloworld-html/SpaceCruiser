@@ -13,13 +13,13 @@ let fireballElement;
 input.addEventListener("keydown", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
-    document.querySelector("#begin-game").click()
+    document.querySelector("form > button").click()
   }
 })
 
 function validateSens() {
-  document.querySelector("#form").style.filter = "none";
-  document.querySelector("#parameters").style.display = "none";
+  document.querySelector("form").style.filter = "none";
+  document.querySelector("section").style.display = "none";
   clearInterval(sensibilty);
   let changeSensibilty = parseFloat(document.getElementById("sensibilty").value);
   switch (changeSensibilty) {
@@ -49,7 +49,7 @@ document.addEventListener('keydown', function(e) {
   }
 })
 
-function validateForm() {
+function ValidateInput() {
   input.value = input.value.toLowerCase();
   try {
     if (input.value == "") throw "Complete blanks";
@@ -59,24 +59,21 @@ function validateForm() {
     alert(inputError);
     return false
   }
-  document.querySelector("#form").style.display = "none";
+  document.querySelector("form").style.display = "none";
   StartGame()
 
   document.addEventListener('keyup', function(e) {
-    if (input.value == "admin") {
-      this.removeEventListener('keyup', arguments.callee, false)
-    }
     if (e.keyCode !== null) { document.documentElement.requestFullscreen() }
   })
 }
 
 function StartGame() {
-  document.querySelector(".alert").style.display = "none";
-  let count = 3;
+  document.querySelector("div").style.display = "none";
   var stopCountDown = setInterval(CountDown, 1000);
   document.querySelector("#count").style.display = "block";
   document.querySelector("#count").style.animation = "count-down 10s";
 
+  let count = 3;
   function CountDown() {
     document.querySelector("#count").innerHTML = count;
     if (count > 0) { count-- }
@@ -99,7 +96,7 @@ function StartGame() {
 
     intervalScore = setInterval(gameScore, 100);
     spaceship.style.display = 'block';
-    spaceship.style.animation = "blinkSpaceship 1s";
+    spaceship.style.animation = "blinkSpaceship 0.2s 5";
 
     const toogleImages = [
       "Photo/Spaceship1.png",
@@ -118,8 +115,8 @@ function StartGame() {
     }
 
     function generateFireBallWithAttributes(el, attrs) {
-      for (var key in attrs) {
-        el.setAttribute(key, attrs[key])
+      for (var x in attrs) {
+        el.setAttribute(x, attrs[x])
       }
       return el
     }

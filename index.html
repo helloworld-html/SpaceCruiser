@@ -5,35 +5,36 @@
     <meta charset="utf-8"/>
     <meta name="description" content="Play at SpaceCruiser, avoid the fireballs and challenge yourself! Project hosted on Github, click for more informations">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/png" href="Photo/favicon.png"/>
     <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
-    <div class="alert">
-      <span class="closeAlert" onclick="this.parentElement.style.display='none'"> &times </span>
+    <div>
+      <span onclick="this.parentElement.style.display='none'"> &times </span>
       <b> Info: </b> Open Github repository to get more information and details about this game by clicking
       <a style="color:white" rel="noopener" href="https://github.com/helloworld-html/SpaceCruiser" target="_blank"> here </a>
     </div>
 
     <main>
-    <form id="form" autocomplete="on">
-      <label> Choose your username: </label>
-      <input type="text" maxlength="10" placeholder="eg: helloworld">
-      <button type="button" onclick="validateForm()" id="begin-game"> Submit </button>
-    </form>
+      <form autocomplete="on">
+        <label> Choose your username: </label>
+        <input type="text" maxlength="10" placeholder="eg: helloworld" autofocus>
+        <button type="button" onclick="ValidateInput()"> Submit </button>
+      </form>
 
-    <img src="Photo/general.png" onclick="document.getElementById('parameters').style.display='block'" id="general">
+      <img src="Photo/general.png" onclick="document.querySelector('section').style.display='block'" id="general">
 
-    <section id="parameters">
-      <label> Choose your sensibility </label>
-      <input type="range" id="sensibilty" min="1" value="2" max="3">
-      <button id="validateSens" onclick="validateSens()"> Submit </button>
-    </section>
+      <section id="parameters">
+        <label> Choose your sensibility </label>
+        <input type="range" id="sensibilty" min="1" value="2" max="3">
+        <button id="validateSens" onclick="validateSens()"> Submit </button>
+      </section>
 
-    <h2 id="count"></h2>
-    <h2 id="name"></h2>
-    <h2 id="score"></h2>
-    <img src="Photo/Spaceship1.png" id="icon">
+      <h2 id="count"></h2>
+      <h2 id="name"></h2>
+      <h2 id="score"></h2>
+      <img src="Photo/Spaceship1.png" id="icon">
     </main>
 
     <h2 id="stopGame"> Game Over! </h2>

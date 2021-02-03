@@ -1,7 +1,7 @@
 * {
   user-select: none;
   font-family: 'B612', sans-serif;
-  text-decoration: none }
+  outline: none; }
 
 body {
   background-color: black;
@@ -26,7 +26,7 @@ body {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.alert {
+div {
   animation: alert-animation 13s infinite;
   padding: 20px;
   text-align: center;
@@ -35,7 +35,7 @@ body {
   color: white;
 }
 
-.closeAlert {
+span {
   margin-left: 15px;
   color: white;
   font-weight: bold;
@@ -46,7 +46,7 @@ body {
   transition: 0.5s;
 }
 
-.closeAlert:hover { color: black }
+span:hover { color: black }
 
 form {
   display: block;
@@ -90,8 +90,8 @@ form > button {
 form > button:hover { transform: translate(0px, 1px) }
 
 @media screen and (max-width: 1000px) {
-  .alert { padding: 15px; font-size: 15px }
-  .closeAlert { font-size: 18px }
+  div { padding: 15px; font-size: 15px }
+  span { font-size: 18px }
   form { width: 300px; padding: 30px 40px 30px 40px }
   form > label { font-size: 160% }
   form > input { font-size: 100%; padding: 8px 16px 8px 16px }
@@ -99,8 +99,8 @@ form > button:hover { transform: translate(0px, 1px) }
 }
 
 @media screen and (min-width: 1500px) {
-  .alert { padding: 30px; font-size: 20px }
-  .closeAlert { font-size: 30px }
+  div { padding: 30px; font-size: 20px }
+  span { font-size: 30px }
   form { width: 540px; padding: 50px 60px 50px 60px }
   form > label { font-size: 250% }
   form > input {
@@ -116,8 +116,8 @@ form > button:hover { transform: translate(0px, 1px) }
 }
 
 @media screen and (min-width: 2500px) {
-  .alert { padding: 40px; font-size: 30px }
-  .closeAlert { font-size: 50px; line-height: 30px }
+  div { padding: 40px; font-size: 30px }
+  span { font-size: 50px; line-height: 30px }
   form {
     width: 750px;
     padding: 80px 100px 80px 100px;
@@ -255,8 +255,9 @@ section > label {
 }
 
 @keyframes intro-fade {
-  from { opacity: 0 }
-  to { opacity: 1 }
+  0% { opacity: 0 }
+  50% {opacity: 0 }
+  100% { opacity: 1 }
 }
 
 @keyframes alert-animation {
@@ -271,17 +272,8 @@ section > label {
 }
 
 @keyframes blinkSpaceship {
-  0% { opacity: 1 }
-  10% { opacity: 0 }
-  20% { opacity: 1 }
-  30% { opacity: 0 }
-  40% { opacity: 1 }
-  50% { opacity: 0 }
-  60% { opacity: 1 }
-  70% { opacity: 0 }
-  80% { opacity: 1 }
-  90% { opacity: 0 }
-  100% { opacity: 1 }
+  from { opacity: 0 }
+  to { opacity: 1 }
 }
 
 @keyframes animationStopGame {
