@@ -17,11 +17,14 @@ input.addEventListener("keydown", function(event) {
   }
 })
 
-function validateSens() {
+function ValidateSettings() {
+  if (document.getElementById("fpscheck").checked) {
+    FpsCounter()
+  }
   document.querySelector("form").style.filter = "none";
   document.querySelector("section").style.display = "none";
   clearInterval(sensibilty);
-  let changeSensibilty = parseFloat(document.getElementById("sensibilty").value);
+  let changeSensibilty = parseInt(document.getElementById("sensibilty").value);
   switch (changeSensibilty) {
     case 1:
       sensibilty = setInterval(loop, 15);
@@ -32,6 +35,21 @@ function validateSens() {
     case 3:
       sensibilty = setInterval(loop, 5);
   }
+}
+
+const times = new Array;
+let fps;
+function FpsCounter() {
+  window.requestAnimationFrame(function() {
+  const now = performance.now();
+  while (times.length > 0 && times[0] <= now - 1000) {
+      times.shift();
+    }
+    times.push(now);
+    fps = times.length;
+    FpsCounter();
+  });
+  document.querySelector("h3").innerHTML = "Frame per Second: " + fps
 }
 
 document.addEventListener('keydown', function(e) {

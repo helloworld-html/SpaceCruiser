@@ -23,17 +23,20 @@
         <button type="button" onclick="ValidateInput()"> Submit </button>
       </form>
 
-      <img src="Photo/general.png" onclick="document.querySelector('section').style.display='block'" id="general">
+      <img src="Photo/general.png" alt="settings" onclick="document.querySelector('section').style.display='block'" id="general">
 
-      <section id="parameters">
+      <section>
         <label> Choose your sensibility </label>
-        <input type="range" id="sensibilty" min="1" value="2" max="3">
-        <button id="validateSens" onclick="validateSens()"> Submit </button>
+        <input type="range" id="sensibilty" min="1" value="2" max="3"></br>
+        <label style="font-size:140%"> Show fps </label>
+        <input id="fpscheck" type="checkbox"> </br>
+        <button id="validateSens" onclick="ValidateSettings()"> Submit </button>
       </section>
 
       <h2 id="count"></h2>
       <h2 id="name"></h2>
       <h2 id="score"></h2>
+      <h3 id="fps"></h3>
       <img src="Photo/Spaceship1.png" id="icon">
     </main>
 

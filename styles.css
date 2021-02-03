@@ -200,7 +200,7 @@ section {
   background-color: #d9d9d9;
   color: black;
   position: fixed;
-  padding: 30px 30px 20px 30px;
+  padding: 40px 70px 20px 70px;
   left: 50%;
   width: auto;
   top: 50%;
@@ -212,6 +212,7 @@ section > label {
   color: black;
   font-weight: normal;
   font-size: 170%;
+  margin-bottom: 20px;
 }
 
 #sensibilty {
@@ -221,7 +222,7 @@ section > label {
   margin-left: auto;
 }
 
-#validateSens {
+section > button {
   margin-top: 20px;
   background-color: #cccccc;
   border: none;
@@ -230,8 +231,17 @@ section > label {
   font-size: 90%;
   cursor: pointer;
 }
+section > button:hover { transform: translate(0px, 1px) }
 
-#validateSens:hover { transform: translate(0px, 1px) }
+h3 {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  color: white;
+  user-select: none;
+  bottom: 2px;
+  font-size: 14px;
+}
 
 #stopGame {
   z-index: 3;
