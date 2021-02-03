@@ -55,15 +55,15 @@ function FpsCounter() {
 document.addEventListener('keydown', function(e) {
   if (e.keyCode == 49) {
     document.getElementById("sensibilty").value = 1;
-    document.querySelector("#validateSens").click()
+    document.querySelector("#validateSettings").click()
   }
   if (e.keyCode == 50) {
     document.getElementById("sensibilty").value = 2;
-    document.querySelector("#validateSens").click()
+    document.querySelector("#validateSettings").click()
   }
   if (e.keyCode == 51) {
     document.getElementById("sensibilty").value = 3;
-    document.querySelector("#validateSens").click()
+    document.querySelector("#validateSettings").click()
   }
 })
 
