@@ -49,7 +49,7 @@ function FpsCounter() {
     fps = times.length;
     FpsCounter();
   });
-  document.querySelector("h3").innerHTML = "Frame per Second: " + fps
+  document.querySelector("h3").textContent = `Frame per Second: ${fps}`
 }
 
 document.addEventListener('keydown', function(e) {
@@ -93,7 +93,7 @@ function StartGame() {
 
   let count = 3;
   function CountDown() {
-    document.querySelector("#count").innerHTML = count;
+    document.querySelector("#count").textContent = count;
     if (count > 0) { count-- }
     else {
       clearInterval(stopCountDown);
@@ -105,10 +105,10 @@ function StartGame() {
     sensibilty = setInterval(loop, 8);
     document.querySelector("#general").style.display = "block";
     document.querySelector("#name").style.display = "block";
-    document.querySelector("#name").innerHTML = "Player: " + "<a style='color:#4dc3ff'> @" + input.value + "</a>";
+    document.querySelector("#name").innerHTML = `Player: <a style=color:#4dc3ff>${input.value}</a>`;
 
     let gameScore = function() {
-      document.querySelector("#score").innerHTML = "Score: " + score;
+      document.querySelector("#score").textContent = `Score: ${score}`;
       score++
     }
 
@@ -234,7 +234,7 @@ function checkCollision() {
     stopGame.style.animation = "animationStopGame 6.5s forwards";
     clearInterval(intervalScore);
     document.querySelector("#finalScore").style.display = "block";
-    document.querySelector("#finalScore").innerHTML = "Your score was: " + score;
+    document.querySelector("#finalScore").textContent = `Your score was: ${score}`;
     document.querySelector("#finalScore").style.animation = "animationStopGame 6.5s forwards";
     document.querySelector("main").style.display = "none";
     setTimeout(function() { location.reload() }, 5500)
