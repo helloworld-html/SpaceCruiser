@@ -1,8 +1,8 @@
 "use strict"
 
-let body = document.querySelector("body");
-let input = document.querySelector("input");
-let spaceship = document.querySelector("#icon");
+let body = document.querySelector('body');
+let input = document.querySelector('input');
+let spaceship = document.querySelector('#icon');
 let fireball;
 let sensibilty;
 let score = 1;
@@ -10,21 +10,21 @@ let intervalScore;
 let fireballArray = new Array;
 let fireballElement;
 
-input.addEventListener("keydown", function(event) {
+input.addEventListener('keydown', function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
-    document.querySelector("form > button").click()
+    document.querySelector('form > button').click()
   }
 })
 
 function ValidateSettings() {
-  if (document.getElementById("fpscheck").checked) {
+  if (document.getElementById('fpscheck').checked) {
     FpsCounter()
   }
-  document.querySelector("form").style.filter = "none";
-  document.querySelector("section").style.display = "none";
+  document.querySelector('form').style.filter = 'none';
+  document.querySelector('section').style.display = 'none';
   clearInterval(sensibilty);
-  let changeSensibilty = parseInt(document.getElementById("sensibilty").value);
+  let changeSensibilty = parseInt(document.getElementById('sensibilty').value);
   switch (changeSensibilty) {
     case 1:
       sensibilty = setInterval(loop, 15);
@@ -49,35 +49,35 @@ function FpsCounter() {
     fps = times.length;
     FpsCounter();
   });
-  document.querySelector("h3").textContent = `Frame per Second: ${fps}`
+  document.querySelector('h3').textContent = `Frame per Second: ${fps}`
 }
 
 document.addEventListener('keydown', function(e) {
   if (e.keyCode == 49) {
-    document.getElementById("sensibilty").value = 1;
-    document.querySelector("#validateSettings").click()
+    document.getElementById('sensibilty').value = 1;
+    document.querySelector('#validateSettings').click()
   }
   if (e.keyCode == 50) {
-    document.getElementById("sensibilty").value = 2;
-    document.querySelector("#validateSettings").click()
+    document.getElementById('sensibilty').value = 2;
+    document.querySelector('#validateSettings').click()
   }
   if (e.keyCode == 51) {
-    document.getElementById("sensibilty").value = 3;
-    document.querySelector("#validateSettings").click()
+    document.getElementById('sensibilty').value = 3;
+    document.querySelector('#validateSettings').click()
   }
 })
 
 function ValidateInput() {
   input.value = input.value.toLowerCase();
   try {
-    if (input.value == "") throw "Complete blanks";
-    if (!input.value.match(/^[A-Za-z]+$/)) throw "Only letters allowed";
-    if (input.value.length < 3) throw "Must have at least 3 characters";
+    if (input.value == '') throw 'Complete blanks';
+    if (!input.value.match(/^[A-Za-z]+$/)) throw 'Only letters allowed';
+    if (input.value.length < 3) throw 'Must have at least 3 characters';
   } catch (inputError) {
     alert(inputError);
     return false
   }
-  document.querySelector("form").style.display = "none";
+  document.querySelector('form').style.display = 'none';
   StartGame()
 
   document.addEventListener('keyup', function(e) {
@@ -86,44 +86,44 @@ function ValidateInput() {
 }
 
 function StartGame() {
-  document.querySelector("div").style.display = "none";
+  document.querySelector('div').style.display = 'none';
   var stopCountDown = setInterval(CountDown, 1000);
-  document.querySelector("#count").style.display = "block";
-  document.querySelector("#count").style.animation = "count-down 10s";
+  document.querySelector('#count').style.display = 'block';
+  document.querySelector('#count').style.animation = 'count-down 10s';
 
   let count = 3;
   function CountDown() {
-    document.querySelector("#count").textContent = count;
+    document.querySelector('#count').textContent = count;
     if (count > 0) { count-- }
     else {
       clearInterval(stopCountDown);
-      document.querySelector("#count").style.display = "none"
+      document.querySelector('#count').style.display = 'none'
     }
   }
 
   setTimeout(function() {
     sensibilty = setInterval(loop, 8);
-    document.querySelector("#general").style.display = "block";
-    document.querySelector("#name").style.display = "block";
-    document.querySelector("#name").innerHTML = `Player: <a style=color:#4dc3ff>${input.value}</a>`;
+    document.querySelector('#general').style.display = 'block';
+    document.querySelector('#name').style.display = "block";
+    document.querySelector('#name').innerHTML = `Player: <a style=color:#4dc3ff>${input.value}</a>`;
 
     let gameScore = function() {
-      document.querySelector("#score").textContent = `Score: ${score}`;
+      document.querySelector('#score').textContent = `Score: ${score}`;
       score++
     }
 
     intervalScore = setInterval(gameScore, 100);
     spaceship.style.display = 'block';
-    spaceship.style.animation = "blinkSpaceship 0.2s 5";
+    spaceship.style.animation = 'blinkSpaceship 0.2s 5';
 
     const toogleImages = [
-      "Photo/Spaceship1.png",
-      "Photo/Spaceship2.png",
-      "Photo/Spaceship3.png",
-      "Photo/Spaceship4.png",
-      "Photo/Spaceship5.png",
-      "Photo/Spaceship6.png",
-      "Photo/Spaceship7.png"
+      'Photo/Spaceship1.png',
+      'Photo/Spaceship2.png',
+      'Photo/Spaceship3.png',
+      'Photo/Spaceship4.png',
+      'Photo/Spaceship5.png',
+      'Photo/Spaceship6.png',
+      'Photo/Spaceship7.png'
     ]
     document.body.onkeydown = function(e) {
       if (e.keyCode == 32) {
@@ -141,9 +141,9 @@ function StartGame() {
 
     (function createFireBalls() {
       for (let i = 0; i < 14; i++) {
-        fireball = document.createElement("img");
+        fireball = document.createElement('img');
         fireballArray.push(generateFireBallWithAttributes(fireball, {
-          src: "Photo/fireball.png"
+          src: 'Photo/fireball.png'
         }))
       }
     })()
@@ -156,14 +156,14 @@ function StartGame() {
       }
       const fireLoop = function() {
         fireballMovement.y += window.innerWidth / 1000 * 2;
-        fireballElement.style.top = fireballMovement.y + "px";
+        fireballElement.style.top = fireballMovement.y + 'px';
         if (fireballMovement.y > window.innerHeight) {
           fireballMovement.x = fireballRandom(fireballElement.offsetWidth);
-          fireballElement.style.left = fireballMovement.x + "px";
+          fireballElement.style.left = fireballMovement.x + 'px';
           fireballMovement.y = 0
         }
       }
-      fireballElement.style.left = fireballMovement.x + "px";
+      fireballElement.style.left = fireballMovement.x + 'px';
       let fireInterval = setInterval(fireLoop, 1000 / (Math.random() * 50 + 80))
     })
 
@@ -176,10 +176,10 @@ function StartGame() {
 let hits = 0;
 let pos = { top: 1000, left: 570 };
 const keys = new Object;
-window.addEventListener("keydown", function(e) {
+window.addEventListener('keydown', function(e) {
   keys[e.keyCode] = true
 })
-window.addEventListener("keyup", function(e) {
+window.addEventListener('keyup', function(e) {
   keys[e.keyCode] = false
 })
 const loop = function() {
@@ -204,8 +204,8 @@ const loop = function() {
   if (pos.top + spaceship.offsetHeight >= body.offsetHeight) {
     pos.top = body.offsetHeight - spaceship.offsetHeight
   }
-  spaceship.style.left = pos.left + "px";
-  spaceship.style.top = pos.top + "px";
+  spaceship.style.left = pos.left + 'px';
+  spaceship.style.top = pos.top + 'px';
   checkCollision()
 }
 
@@ -226,17 +226,17 @@ function checkCollision() {
   })
 
   if (collision == true) {
-    if (input.value == "admin") { return false }
+    if (input.value == 'admin') { return false }
     fireballArray.forEach(function(fireballElement) {
-      return fireballElement.style.display = "none"
+      return fireballElement.style.display = 'none'
     })
-    stopGame.style.display = "block";
-    stopGame.style.animation = "animationStopGame 6.5s forwards";
+    stopGame.style.display = 'block';
+    stopGame.style.animation = 'animationStopGame 6.5s forwards';
     clearInterval(intervalScore);
-    document.querySelector("#finalScore").style.display = "block";
-    document.querySelector("#finalScore").textContent = `Your score was: ${score}`;
-    document.querySelector("#finalScore").style.animation = "animationStopGame 6.5s forwards";
-    document.querySelector("main").style.display = "none";
+    document.querySelector('#finalScore').style.display = 'block';
+    document.querySelector('#finalScore').textContent = `Your score was: ${score}`;
+    document.querySelector('#finalScore').style.animation = 'animationStopGame 6.5s forwards';
+    document.querySelector('main').style.display = 'none';
     setTimeout(function() { location.reload() }, 5500)
   }
 }
